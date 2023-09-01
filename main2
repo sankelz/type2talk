@@ -1,0 +1,22 @@
+import pyttsx3
+from datetime import datetime
+
+engine = pyttsx3.init()
+
+def intro():
+    engine.say("hi, user!")
+    engine.runAndWait()
+    engine.say("what's ur name dude? ")
+    engine.runAndWait()
+    name = (input("username - "))
+    engine.say(f'what is up, {name}')
+    engine.runAndWait()
+
+def timething():
+    nowrl = datetime.now()
+    nowrlsaid = nowrl.strftime("%B %d %Y %I:%M %p")
+    engine.say(f'it is {nowrlsaid}')
+    engine.runAndWait()
+
+intro()
+timething()
